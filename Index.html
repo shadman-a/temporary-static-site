@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadman Ahmed - Software Developer in New York</title>
+    <meta
+      name="description"
+      content="Hi! I'm Shadman Ahmed, a Software Developer based in New York, crafting innovative solutions. My site is currently under construction, but stay tuned for updates and feel free to connect!"
+    />
+    <link rel="icon" type="image/ico" href="./favicon.ico" />
+    <!-- Add your favicon here -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #000000;
+        color: white;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        text-align: center;
+        padding: 20px;
+        max-width: 800px;
+        width: 90%;
+        margin: auto;
+      }
+      h1 {
+        font-weight: 400;
+        margin-bottom: 20px;
+        animation: slideInFromLeft 1.5s;
+      }
+      p {
+        font-weight: 300;
+        line-height: 1.6;
+        animation: slideInFromRight 1.5s;
+      }
+      @keyframes slideInFromLeft {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @keyframes slideInFromRight {
+        0% {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      .icon-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        background: rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+      .icon-bar a {
+        font-size: 34px;
+        margin: 0 10px;
+        color: white;
+        transition: color 0.3s, transform 0.3s;
+      }
+      .icon-bar a:hover {
+        color: #808080; /* Change icon color on hover */
+        transform: scale(1.1); /* Slightly increase the size */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Shadman Ahmed</h1>
+      <p>
+        Hello there! I'm Shadman, a passionate Software Developer from New York.
+        My journey in technology is driven by a deep curiosity for innovation
+        and a strong desire to solve real-world problems. Whether it's building
+        user-friendly applications or diving into the latest tech trends, I'm
+        all about delivering impactful and accessible software solutions. Feel
+        free to reach out and connect with me!
+      </p>
+    </div>
+    <div class="icon-bar">
+      <!-- Social Icons -->
+      <a href="mailto:shadman@shadman.cc" target="_blank" title="Email"
+        ><i class="fas fa-envelope"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/ahmedshadman"
+        target="_blank"
+        title="LinkedIn"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a href="https://twitter.com/talktoshad" target="_blank" title="Twitter"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a href="https://github.com/shadman-a" target="_blank" title="GitHub"
+        ><i class="fab fa-github"></i
+      ></a>
+    </div>
+  </body>
+</html>
