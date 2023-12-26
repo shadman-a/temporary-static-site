@@ -20,10 +20,6 @@
         background-color: #000;
         color: #fff;
         font-family: 'Open Sans', sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
     .cursor {
@@ -38,12 +34,18 @@
         transition: transform 0.3s;
     }
 
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .content {
-        position: absolute;
+        align-self: center;
         text-align: left;
         max-width: 50%;
         z-index: 1;
-        padding: 5px;
     }
 
     h1, p {
@@ -60,8 +62,8 @@
     /* Style for the large clipped text */
     .large-text {
         font-family: 'Open Sans', sans-serif;
-        position: absolute;
-        left: -5%;
+        position: relative;
+        left: -20%;
         top: 0;
         font-size: 15vw;
         line-height: 0.8;
@@ -74,12 +76,10 @@
     }
 
     .large-text.second-line {
-        top: 10vw;
-        left: 0;
+        left: -5;
     }
 
     .icon-bar {
-        position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
@@ -126,31 +126,27 @@
       @media (max-width: 768px) {
         .cursor {
             display: none; /* Hide cursor on mobile */
-        };
+        }
         .content {
-            align-self: center !important;
+            max-width: 65%;
         }
     }
        
 </style>
 </head>
 <body>
-
+<div class="container">
 <div class="large-text">
     Shadman
 </div>
 <div class="large-text second-line">
     Ahmed
 </div>
-
+<br/>
 <div class="content">
     <p>🌃 Hello from New York! I'm Shadman, a Software Developer with a passion for innovation and practical problem-solving. </p>
     <p>Whether it's building user-friendly applications or diving into the latest tech trends, I'm all about delivering impactful and accessible software solutions.</p>
     <p>Interested in discussing technology or collaborating on a project? Feel free to reach out and connect with me!</p>
-
-    <br/>
-<br/>
-<br/>
 <div class="icon-bar">
     <!-- Social Icons -->
     <a href="mailto:shadman@shadman.cc" target="_blank" title="Email"
@@ -169,7 +165,7 @@
       ><i class="fab fa-github"></i
     ></a>
 </div>
-
+</div>
 </div>
 
 <div class="cursor" id="cursor"></div>
