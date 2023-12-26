@@ -39,7 +39,6 @@
     }
 
     .content {
-        align-self: self-start;
         position: absolute;
         text-align: left;
         max-width: 50%;
@@ -72,7 +71,6 @@
         pointer-events: none;
         user-select: none;
         animation: slideInFromLeft 1.5s;
-        align-self: auto;
     }
 
     .large-text.second-line {
@@ -128,8 +126,12 @@
       @media (max-width: 768px) {
         .cursor {
             display: none; /* Hide cursor on mobile */
+        };
+        .content {
+            align-self: center !important;
         }
     }
+       
 </style>
 </head>
 <body>
