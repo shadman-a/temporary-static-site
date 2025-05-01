@@ -1,189 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shadman Ahmed</title>
-<meta name="description" content="I'm a full stack developer bringing a blend of creativity and technical prowess to the digital world. Based in NYC, I specialize in crafting seamless web experiences, combining sleek front-end designs with robust back-end solutions. Known for a laidback approach, I thrive on transforming complex coding challenges into user-friendly masterpieces. Let's code something amazing together!">
-<meta name="keywords" content="Shadman, Full Stack Developer, New York, Seamless Web Experiences, Front-End Design, Back-End Solutions, Creativity, Technical Prowess, NYC, Stony Brook University, Stony Brook, Queens, New York City, Ruby, Rails, JavaScript, Java, React, GitHub">
-<link rel="icon" type="image/ico" href="./favicon.ico" />
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-<link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shadman Ahmed</title>
+  <meta name="description" content="I'm a full stack developer bringing a blend of creativity and technical prowess to the digital world. Based in NYC, I specialize in crafting seamless web experiences, combining sleek front-end designs with robust back-end solutions. Known for a laidback approach, I thrive on transforming complex coding challenges into user-friendly masterpieces. Let's code something amazing together!"/>
+  <meta name="keywords" content="Shadman, Full Stack Developer, New York, Seamless Web Experiences, Front-End Design, Back-End Solutions, Creativity, Technical Prowess, NYC, Stony Brook University, Stony Brook, Queens, New York City, Ruby, Rails, JavaScript, Java, React, GitHub"/>
+  <link rel="icon" type="image/ico" href="./favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <style>
     body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        color: #fff;
-        font-family: 'Open Sans', sans-serif;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Open Sans', sans-serif;
     }
 
     .cursor {
-        width: 20px;
-        height: 20px;
-        background-color: #fff;
-        border-radius: 50%;
-        position: absolute;
-        pointer-events: none;
-        mix-blend-mode: difference;
-        z-index: 1000;
-        transition: transform 0.3s;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      z-index: 1000;
+      transition: transform 0.3s;
     }
 
     .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .content {
-        align-self: center;
-        text-align: left;
-        max-width: 50%;
-        z-index: 1;
+      align-self: center;
+      text-align: left;
+      max-width: 50%;
+      z-index: 1;
     }
 
     h1, p {
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
     }
 
     p {
-        font-size: 1.2em;
-        line-height: 1.6;
-        margin-bottom: 1em;
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 1em;
     }
 
-    /* Style for the large clipped text */
+    /* fluid large-text (min:2rem, ideal:15vw, max:7.5rem) */
     .large-text {
-        font-family: 'Open Sans', sans-serif;
-        position: relative;
-        left: -20%;
-        top: 0;
-        font-size: 15vw;
-        line-height: 0.8;
-        font-weight: 900;
-        white-space: nowrap;
-        overflow: hidden;
-        pointer-events: none;
-        user-select: none;
-        animation: slideInFromLeft 1.5s;
+      font-family: 'Open Sans', sans-serif;
+      position: relative;
+      left: -20%;
+      top: 0;
+      font-size: clamp(2rem, 15vw, 7.5rem);
+      line-height: 0.8;
+      font-weight: 900;
+      white-space: nowrap;
+      overflow: hidden;
+      pointer-events: none;
+      user-select: none;
+      animation: slideInFromLeft 1.5s;
     }
 
     .large-text.second-line {
-        left: -5;
+      left: -5%;
     }
 
     .icon-bar {
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 10px 0;
-        background: rgba(0, 0, 0, 0.5);
-        text-align: center;
-        display: flex;
-        justify-content: center;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      display: flex;
+      justify-content: center;
     }
 
     .icon-bar a {
-        font-size: 34px;
-        margin: 0 10px;
-        color: white;
-        transition: color 0.3s, transform 0.3s;
+      font-size: 34px;
+      margin: 0 10px;
+      color: white;
+      transition: color 0.3s, transform 0.3s;
     }
 
     .icon-bar a:hover {
-        color: #808080; /* Change icon color on hover */
-        transform: scale(1.1); /* Slightly increase the size */
+      color: #808080;
+      transform: scale(1.1);
     }
 
     @keyframes clickEffect {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.25);
-        }
-        100% {
-            transform: scale(1);
-        }
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.25); }
+      100% { transform: scale(1); }
     }
+
     @keyframes slideInFromLeft {
-        0% {
-          transform: translateX(-100%);
-          opacity: 0;
-        }
-        100% {
-          transform: translateX(0);
-          opacity: 1;
-        }
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
       }
-      @media (max-width: 768px) {
-        .cursor {
-            display: none; /* Hide cursor on mobile */
-        }
-        .content {
-            max-width: 70%;
-        }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
-       
-</style>
+
+    @media (max-width: 768px) {
+      .cursor {
+        display: none;
+      }
+      .content {
+        max-width: 70%;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-<div class="large-text">
-    Shadman
-</div>
-<div class="large-text second-line">
-    Ahmed
-</div>
-<br/>
-<div class="content">
-    <p>🌃 Hello from New York! I'm Shadman, a Software Developer with a passion for innovation and practical problem-solving. </p>
-    <p>Whether it's building user-friendly applications or diving into the latest tech trends, I'm all about delivering impactful and accessible software solutions.</p>
-    <p>Interested in discussing technology or collaborating on a project? Feel free to reach out and connect with me!</p>
-<div class="icon-bar">
-    <!-- Social Icons -->
-    <a href="mailto:shadman@shadman.cc" target="_blank" title="Email"
-      ><i class="fas fa-envelope"></i
-    ></a>
-    <a
-      href="https://www.linkedin.com/in/ahmedshadman"
-      target="_blank"
-      title="LinkedIn"
-      ><i class="fab fa-linkedin-in"></i
-    ></a>
-    <a href="https://twitter.com/talktoshad" target="_blank" title="Twitter"
-      ><i class="fab fa-twitter"></i
-    ></a>
-    <a href="https://github.com/shadman-a" target="_blank" title="GitHub"
-      ><i class="fab fa-github"></i
-    ></a>
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="large-text">Shadman</div>
+    <div class="large-text second-line">Ahmed</div>
+    <br/>
+    <div class="content">
+      <p>🌃 Hello from New York! I'm Shadman, a Software Developer with a passion for innovation and practical problem-solving.</p>
+      <p>Whether it's building user-friendly applications or diving into the latest tech trends, I'm all about delivering impactful and accessible software solutions.</p>
+      <p>Interested in discussing technology or collaborating on a project? Feel free to reach out and connect with me!</p>
+      <div class="icon-bar">
+        <a href="mailto:shadman@shadman.cc" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/ahmedshadman" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/talktoshad" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/shadman-a" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
 
-<div class="cursor" id="cursor"></div>
+  <div class="cursor" id="cursor"></div>
 
-<script>
+  <script>
     const cursor = document.getElementById('cursor');
-
-    document.addEventListener('mousemove', function(e) {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
     });
-
-    document.addEventListener('click', function() {
-        cursor.style.animation = 'none';
-        cursor.offsetHeight;
-        cursor.style.animation = 'clickEffect 0.3s ease';
+    document.addEventListener('click', () => {
+      cursor.style.animation = 'none';
+      cursor.offsetHeight;
+      cursor.style.animation = 'clickEffect 0.3s ease';
     });
-</script>
-
+  </script>
 </body>
 </html>
