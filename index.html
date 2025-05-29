@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shadman Ahmed</title>
   <meta name="description" content="I'm a full stack developer bringing a blend of creativity and technical prowess to the digital world. Based in NYC, I specialize in crafting seamless web experiences, combining sleek front-end designs with robust back-end solutions. Known for a laidback approach, I thrive on transforming complex coding challenges into user-friendly masterpieces. Let's code something amazing together!"/>
   <meta name="keywords" content="Shadman, Full Stack Developer, New York, Seamless Web Experiences, Front-End Design, Back-End Solutions, Creativity, Technical Prowess, NYC, Stony Brook University, Stony Brook, Queens, New York City, Ruby, Rails, JavaScript, Java, React, GitHub"/>
+  <meta name="google" content="notranslate" />
   <link rel="icon" type="image/ico" href="./favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -14,6 +15,7 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        scroll-behavior: smooth;
         background-color: #000;
         color: #fff;
         font-family: 'Open Sans', sans-serif;
@@ -32,6 +34,7 @@
       transition: transform 0.3s;
     }
 
+
     .container {
       display: flex;
       flex-direction: column;
@@ -42,7 +45,7 @@
     .content {
       align-self: center;
       text-align: left;
-      max-width: 50%;
+      max-width: 70%;
       z-index: 1;
     }
 
@@ -98,7 +101,8 @@
 
     .icon-bar a:hover {
       color: #808080;
-      transform: scale(1.1);
+      filter: brightness(1.2);
+      transform: translateY(-3px) scale(1.1);
     }
 
     @keyframes clickEffect {
@@ -119,12 +123,24 @@
     }
 
     @media (max-width: 768px) {
-      .cursor {
-        display: none;
-      }
       .content {
         max-width: 70%;
       }
+      .cursor {
+        display: none;
+      }
+    }
+
+    .typewriter-caret {
+      display: inline-block;
+      width: 1ch;
+      background-color: currentColor;
+      animation: blink 1s steps(1) infinite;
+      vertical-align: bottom;
+      margin-left: 2px;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
     }
   </style>
 </head>
@@ -134,9 +150,11 @@
     <div class="large-text second-line">Ahmed</div>
     <br/>
     <div class="content">
-      <p>🌃 Hello from New York! I'm Shadman, a Software Developer with a passion for innovation and practical problem-solving.</p>
-      <p>Whether it's building user-friendly applications or diving into the latest tech trends, I'm all about delivering impactful and accessible software solutions.</p>
-      <p>Interested in discussing technology or collaborating on a project? Feel free to reach out and connect with me!</p>
+      <div id="typewriter-container">
+        <p>🌃 Hello from New York! I'm Shadman, a Software Developer with a passion for innovation and practical problem-solving.</p>
+        <p>Whether it's building user-friendly applications or diving into the latest tech trends, I'm all about delivering impactful and accessible software solutions.</p>
+        <p>Interested in discussing technology or collaborating on a project? Feel free to reach out and connect with me!</p>
+      </div>
       <div class="icon-bar">
         <a href="mailto:shadman@shadman.cc" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/ahmedshadman" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -144,10 +162,33 @@
         <a href="https://github.com/shadman-a" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       </div>
     </div>
+    <div class="cursor" id="cursor"></div>
   </div>
 
-  <div class="cursor" id="cursor"></div>
 
+
+  <script>
+    // TYPEWRITER effect on full block with paragraphs
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('typewriter-container');
+      const texts = Array.from(container.querySelectorAll('p')).map(p => p.textContent);
+      const final = texts.join('\n\n');
+      container.innerHTML = '';
+      let i = 0;
+      const interval = setInterval(() => {
+        const current = final.slice(0, i);
+        // rebuild paragraphs on line breaks
+        container.innerHTML = current
+          .split('\n\n')
+          .map(line => `<p>${line}</p>`)
+          .join('');
+        i++;
+        if (i > final.length) {
+          clearInterval(interval);
+        }
+      }, 10);
+    });
+  </script>
   <script>
     const cursor = document.getElementById('cursor');
     document.addEventListener('mousemove', e => {
@@ -159,7 +200,6 @@
       cursor.offsetHeight;
       cursor.style.animation = 'clickEffect 0.3s ease';
     });
-
   </script>
 </body>
 </html>
