@@ -1,205 +1,544 @@
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shadman Ahmed</title>
-  <meta name="description" content="I'm a full stack developer bringing a blend of creativity and technical prowess to the digital world. Based in NYC, I specialize in crafting seamless web experiences, combining sleek front-end designs with robust back-end solutions. Known for a laidback approach, I thrive on transforming complex coding challenges into user-friendly masterpieces. Let's code something amazing together!"/>
-  <meta name="keywords" content="Shadman, Full Stack Developer, New York, Seamless Web Experiences, Front-End Design, Back-End Solutions, Creativity, Technical Prowess, NYC, Stony Brook University, Stony Brook, Queens, New York City, Ruby, Rails, JavaScript, Java, React, GitHub"/>
-  <meta name="google" content="notranslate" />
-  <link rel="icon" type="image/ico" href="./favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <meta
+    name="description"
+    content="Shadman Ahmed is a software engineer in New York building software across Salesforce, iOS, visionOS, Python, automation, and AI-powered products."
+  />
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
   <style>
-    body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        scroll-behavior: smooth;
-        background-color: #000;
-        color: #fff;
-        font-family: 'Open Sans', sans-serif;
-        cursor: none;
+    :root {
+      --bg: #000000;
+      --text: #f3f1ea;
+      --muted: #a5a19a;
+      --line: rgba(243, 241, 234, 0.12);
+      --soft: rgba(243, 241, 234, 0.07);
+      --accent: #8fb1ff;
+      --max: 1040px;
     }
 
-    .cursor {
-      width: 20px;
-      height: 20px;
-      background-color: #fff;
-      border-radius: 50%;
-      position: absolute;
-      pointer-events: none;
-      mix-blend-mode: difference;
-      z-index: 1000;
-      transition: transform 0.3s;
+    * {
+      box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
 
-    .container {
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, Geist, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(143, 177, 255, 0.42);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+      transition: color 160ms ease, text-decoration-color 160ms ease, opacity 160ms ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-decoration-color: rgba(143, 177, 255, 0.88);
+    }
+
+    .page {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+      padding: 34px 0 80px;
+    }
+
+    .hero {
+      padding: 0.5rem 0 2.9rem;
+    }
+
+    .hero-top {
       display: flex;
-      flex-direction: column;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fade-up 600ms ease forwards;
+    }
+
+    .top-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+      gap: 2rem 3.25rem;
+      align-items: start;
+    }
+
+    .hero-title {
+      display: grid;
+      align-content: start;
+      gap: 1rem;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fade-up 720ms ease 120ms forwards;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.8rem, 10.8vw, 7.8rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+    }
+
+    .title-line {
+      display: block;
+    }
+
+    .hero-copy {
+      padding-top: 1.8rem;
+      padding-bottom: 0.2rem;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fade-up 720ms ease 220ms forwards;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
+      min-height: 2rem;
+      padding: 0.34rem 0.72rem;
+      border: 1px solid rgba(143, 177, 255, 0.16);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(143, 177, 255, 0.12), rgba(143, 177, 255, 0.04));
+      color: rgba(243, 241, 234, 0.78);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
     }
 
-    .content {
-      align-self: center;
-      text-align: left;
-      max-width: 70%;
-      z-index: 1;
+    .lede {
+      margin: 0 0 1rem;
+      max-width: 18ch;
+      font-size: clamp(1.28rem, 2.2vw, 1.75rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 680;
+      text-wrap: balance;
     }
 
-    h1, p {
+    .body-copy {
+      max-width: 38rem;
+    }
+
+    .body-copy p,
+    .section-copy p {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.78;
+      color: rgba(243, 241, 234, 0.92);
+    }
+
+    .body-copy p + p {
+      margin-top: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero-rule {
+      position: relative;
+      height: 1px;
+      margin-top: 2.35rem;
+      background: linear-gradient(90deg, rgba(243, 241, 234, 0.16), rgba(243, 241, 234, 0.06) 38%, rgba(243, 241, 234, 0.02) 100%);
+      overflow: hidden;
+      opacity: 0;
+      animation: rule-fade-in 900ms cubic-bezier(0.22, 1, 0.36, 1) 260ms forwards;
+    }
+
+    .hero-rule::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 82px;
+      background: linear-gradient(90deg, rgba(143, 177, 255, 0.55), rgba(143, 177, 255, 0.08));
+      opacity: 0;
+      transform: translateX(-6px) scaleX(0.9);
+      transform-origin: left;
+      filter: blur(2px);
+      animation: rule-accent-settle 1200ms cubic-bezier(0.22, 1, 0.36, 1) 320ms forwards;
+    }
+
+    .section-shell {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 1.2rem 2rem;
+      padding: 2.3rem 0;
+    }
+
+    .section-shell:first-of-type {
+      padding-top: 1.45rem;
+    }
+
+    .section-shell + .section-shell {
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      margin: 0;
+      padding-top: 0.15rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .focus-list {
       margin: 0;
       padding: 0;
+      list-style: none;
     }
 
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      margin-bottom: 1em;
+    .focus-list li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--soft);
     }
 
-    /* fluid large-text (min:2rem, ideal:15vw, max:7.5rem) */
-    .large-text {
-      font-family: 'Open Sans', sans-serif;
-      position: relative;
-      left: -20%;
-      top: 0;
-      font-size: clamp(2rem, 15vw, 7.5rem);
-      line-height: 0.8;
-      font-weight: 900;
+    .focus-list li:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .focus-title {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+
+    .focus-title a {
+      text-decoration: none;
+    }
+
+    .focus-links {
+      margin: 0.3rem 0 0;
+      color: rgba(243, 241, 234, 0.84);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      max-width: 46rem;
+    }
+
+    .focus-links a {
+      color: rgba(243, 241, 234, 0.88);
+      text-decoration: none;
+    }
+
+    .focus-links a:hover {
+      color: var(--accent);
+    }
+
+    .focus-links span {
+      color: var(--muted);
+      padding: 0 0.18rem;
+    }
+
+    .focus-meta {
+      color: var(--muted);
+      font-size: 0.9rem;
       white-space: nowrap;
-      overflow: hidden;
-      pointer-events: none;
-      user-select: none;
-      animation: slideInFromLeft 1.5s;
     }
 
-    .large-text.second-line {
-      left: -5%;
+    .section-copy p {
+      max-width: 40rem;
     }
 
-    .icon-bar {
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px 0;
-      background: rgba(0, 0, 0, 0.5);
-      text-align: center;
-      display: flex;
-      justify-content: center;
+    .footer {
+      padding-top: 1.8rem;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
-    .icon-bar a {
-      font-size: 34px;
-      margin: 0 10px;
-      color: white;
-      transition: color 0.3s, transform 0.3s;
-      cursor: none;
+    .footer-copy {
+      margin: 0;
+      max-width: 40rem;
     }
 
-    .icon-bar a:hover {
-      color: #808080;
-      filter: brightness(1.2);
-      transform: translateY(-3px) scale(1.1);
+    @keyframes fade-up {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    @keyframes clickEffect {
-      0%   { transform: scale(1); }
-      50%  { transform: scale(1.25); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes slideInFromLeft {
-      0% {
-        transform: translateX(-100%);
+    @keyframes rule-fade-in {
+      from {
         opacity: 0;
       }
-      100% {
-        transform: translateX(0);
+
+      to {
         opacity: 1;
       }
     }
 
-    @media (max-width: 768px) {
-      .content {
-        max-width: 70%;
+    @keyframes rule-accent-settle {
+      0% {
+        opacity: 0;
+        transform: translateX(-6px) scaleX(0.9);
+        filter: blur(2px);
       }
-      .cursor {
-        display: none;
+
+      45% {
+        opacity: 0.95;
+      }
+
+      100% {
+        opacity: 0.82;
+        transform: translateX(0) scaleX(1);
+        filter: blur(0);
       }
     }
 
-    .typewriter-caret {
-      display: inline-block;
-      width: 1ch;
-      background-color: currentColor;
-      animation: blink 1s steps(1) infinite;
-      vertical-align: bottom;
-      margin-left: 2px;
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 1.35rem;
+      }
+
+      .hero-copy {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .lede {
+        max-width: 20ch;
+      }
     }
-    @keyframes blink {
-      50% { opacity: 0; }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(calc(100% - 24px), var(--max));
+        padding-top: 24px;
+        padding-bottom: 56px;
+      }
+
+      .hero {
+        padding-bottom: 2.6rem;
+      }
+
+      .hero-top {
+        justify-content: flex-start;
+        margin-bottom: 1.15rem;
+      }
+
+      .top-links {
+        gap: 0.7rem;
+        font-size: 0.74rem;
+      }
+
+      .hero-grid {
+        gap: 1.45rem;
+      }
+
+      .section-shell {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1.9rem 0;
+      }
+
+      .section-shell:first-of-type {
+        padding-top: 1rem;
+      }
+
+      .focus-list li {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+        padding: 0.8rem 0;
+      }
+
+      .focus-meta {
+        white-space: normal;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 17vw, 4.9rem);
+        line-height: 0.92;
+      }
+
+      .hero-title {
+        gap: 1.25rem;
+      }
+
+      .hero-meta {
+        gap: 0.45rem;
+      }
+
+      .hero-meta span {
+        min-height: 1.9rem;
+        padding: 0.3rem 0.66rem;
+        font-size: 0.72rem;
+      }
+
+      .lede {
+        max-width: none;
+        font-size: clamp(1.15rem, 7vw, 1.5rem);
+        text-wrap: pretty;
+      }
+
+      .body-copy p,
+      .section-copy p {
+        font-size: 1rem;
+        line-height: 1.72;
+      }
+
+      .hero-rule {
+        margin-top: 2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .hero-top,
+      .hero-title,
+      .hero-copy {
+        opacity: 1;
+        transform: none;
+      }
+
+      .hero-rule {
+        opacity: 1;
+      }
+
+      .hero-rule::before {
+        opacity: 0.82;
+        transform: none;
+        filter: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="large-text">Shadman</div>
-    <div class="large-text second-line">Ahmed</div>
-    <br/>
-    <div class="content">
-      <div id="typewriter-container">
-        <p>🌃 Hello from New York! I'm Shadman, a Software Developer with a passion for innovation and practical problem-solving.</p>
-        <p>Whether it's building user-friendly applications or diving into the latest tech trends, I'm all about delivering impactful and accessible software solutions.</p>
-        <p>Interested in discussing technology or collaborating on a project? Feel free to reach out and connect with me!</p>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-top">
+        <nav class="top-links" aria-label="Contact and profiles">
+          <a href="mailto:shadman@shadman.cc">Email</a>
+          <a href="https://github.com/shadman-a" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/ahmedshadman" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
       </div>
-      <div class="icon-bar">
-        <a href="mailto:shadman@shadman.cc" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/ahmedshadman" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://twitter.com/talktoshad" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://github.com/shadman-a" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+
+      <div class="hero-grid">
+        <div class="hero-title">
+          <h1>
+            <span class="title-line">Shadman</span>
+            <span class="title-line">Ahmed</span>
+          </h1>
+          <div class="hero-meta">
+            <span>Software Engineer</span>
+            <span>New York</span>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="lede">
+            I build products across Salesforce, iOS, visionOS, Python, and AI.
+          </p>
+
+          <div class="body-copy">
+            <p>
+              Some of that work lives in enterprise systems and internal tooling. Some of it turns into consumer apps, automation tools, and side projects built around newer Apple and AI frameworks.
+            </p>
+            <p>
+              I like product-minded engineering: clear functionality, tight interfaces, and software that feels useful right away.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="cursor" id="cursor"></div>
-  </div>
 
+      <div class="hero-rule" aria-hidden="true"></div>
+    </header>
 
+    <section class="section-shell" aria-labelledby="work-title">
+      <h2 class="section-label" id="work-title">What I work on</h2>
+      <ul class="focus-list">
+        <li>
+          <div>
+            <h3 class="focus-title">Full stack products, internal tools, and interfaces people actually use</h3>
+            <p class="focus-links"><a href="https://github.com/logan-lampton/Ctrl-Alt-Defeat-Debt-Frontend" target="_blank" rel="noopener noreferrer">Ctrl-Alt-Defeat-Debt — AI finance workspace</a> <span>·</span> <a href="https://github.com/shadman-a/python-validator" target="_blank" rel="noopener noreferrer">CSV Validator Web — data checks for messy files</a></p>
+          </div>
+          <span class="focus-meta">web · product · systems</span>
+        </li>
+        <li>
+          <div>
+            <h3 class="focus-title">Salesforce builds, enterprise automation, integrations, and workflow design</h3>
+            <p class="focus-links"><a href="https://github.com/shadman-a/lwc-ai" target="_blank" rel="noopener noreferrer">LWC AI — Salesforce chat interface</a></p>
+          </div>
+          <span class="focus-meta">LWC · Apex · automation</span>
+        </li>
+        <li>
+          <div>
+            <h3 class="focus-title">Immersive and spatial apps focused on new interaction models</h3>
+            <p class="focus-links"><a href="https://apps.apple.com/us/app/3drentspace/id6476522711" target="_blank" rel="noopener noreferrer">3DRentSpace — Vision Pro rental explorer</a> <span>·</span> <a href="https://github.com/shadman-a/NotesPlusPlus" target="_blank" rel="noopener noreferrer">NotesPlusPlus — Apple Intelligence notes</a> <span>·</span> <a href="https://github.com/shadman-a/HRV-app" target="_blank" rel="noopener noreferrer">HRV App — private health insights</a></p>
+          </div>
+          <span class="focus-meta">Swift · visionOS · interaction</span>
+        </li>
+        <li>
+          <div>
+            <h3 class="focus-title">Data validation, browser automation, and AI-assisted tooling for messy operational work</h3>
+            <p class="focus-links"><a href="https://github.com/shadman-a/python-validator" target="_blank" rel="noopener noreferrer">CSV Validator Web — data checks for messy files</a> <span>·</span> <a href="https://github.com/shadman-a/homebridge-lg-thinq" target="_blank" rel="noopener noreferrer">LG ThinQ for Homebridge — smart home control for LG devices</a></p>
+          </div>
+          <span class="focus-meta">Python · automation · AI</span>
+        </li>
+      </ul>
+    </section>
 
-  <script>
-    // TYPEWRITER effect on full block with paragraphs
-    document.addEventListener('DOMContentLoaded', () => {
-      const container = document.getElementById('typewriter-container');
-      const texts = Array.from(container.querySelectorAll('p')).map(p => p.textContent);
-      const final = texts.join('\n\n');
-      container.innerHTML = '';
-      let i = 0;
-      const interval = setInterval(() => {
-        const current = final.slice(0, i);
-        // rebuild paragraphs on line breaks
-        container.innerHTML = current
-          .split('\n\n')
-          .map(line => `<p>${line}</p>`)
-          .join('');
-        i++;
-        if (i > final.length) {
-          clearInterval(interval);
-        }
-      }, 10);
-    });
-  </script>
-  <script>
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top  = e.clientY + 'px';
-    });
-    document.addEventListener('click', () => {
-      cursor.style.animation = 'none';
-      cursor.offsetHeight;
-      cursor.style.animation = 'clickEffect 0.3s ease';
-    });
-  </script>
+    <section class="section-shell" aria-labelledby="approach-title">
+      <h2 class="section-label" id="approach-title">Approach</h2>
+      <div class="section-copy">
+        <p>
+          I care about software that feels clear, useful, and well put together. Whether it is an internal tool or a consumer app, I want the product to make sense fast and hold up once people actually start using it.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer-copy">Open to thoughtful product and engineering work.</p>
+    </footer>
+  </main>
 </body>
 </html>

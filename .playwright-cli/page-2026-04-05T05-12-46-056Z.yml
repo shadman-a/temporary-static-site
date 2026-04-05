@@ -1,0 +1,36 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - navigation "Contact and profiles" [ref=e5]:
+      - link "Email" [ref=e6] [cursor=pointer]:
+        - /url: mailto:shadman@shadman.cc
+      - link "GitHub" [ref=e7] [cursor=pointer]:
+        - /url: https://github.com/shadman-a
+      - link "LinkedIn" [ref=e8] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/ahmedshadman
+    - heading "Shadman Ahmed" [level=1] [ref=e9]
+    - generic [ref=e10]:
+      - generic [ref=e11]: Software Engineer
+      - generic [ref=e12]: New York
+    - paragraph [ref=e13]: I build practical software across Salesforce, full stack development, automation, integrations, data, and AI-assisted tooling.
+    - generic [ref=e14]:
+      - paragraph [ref=e15]: "Most of my work sits where product thinking meets systems design: customer-facing workflows, internal platforms, geospatial experiences, browser automation, and the tools that make complex operations feel simpler to use."
+      - paragraph [ref=e16]: "The throughline is software that holds up in the real world: clear interfaces, practical architecture, and systems that reduce friction instead of adding to it."
+  - region "What I work on" [ref=e17]:
+    - heading "What I work on" [level=2] [ref=e18]
+    - list [ref=e19]:
+      - listitem [ref=e20]:
+        - generic [ref=e21]: Product-facing web applications and internal platforms
+        - generic [ref=e22]: web · systems · product
+      - listitem [ref=e23]:
+        - generic [ref=e24]: Salesforce customization, enterprise workflows, and integrations
+        - generic [ref=e25]: LWC · Apex · automation
+      - listitem [ref=e26]:
+        - generic [ref=e27]: Agent-style tooling and browser-driven automation
+        - generic [ref=e28]: AI · Playwright · operations
+      - listitem [ref=e29]:
+        - generic [ref=e30]: Data validation, reporting, and operational tooling
+        - generic [ref=e31]: pipelines · dashboards · QA
+  - region "Approach" [ref=e32]:
+    - heading "Approach" [level=2] [ref=e33]
+    - paragraph [ref=e35]: I tend to prefer grounded software over novelty for its own sake. That usually means strong interfaces, dependable workflow design, and implementation choices that make systems easier to maintain once they leave the prototype stage.
+  - paragraph [ref=e37]: Open to thoughtful product, platform, and systems work.

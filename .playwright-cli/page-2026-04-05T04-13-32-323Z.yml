@@ -1,0 +1,36 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: New York
+    - heading "Shadman Ahmed" [level=1] [ref=e5]
+    - generic [ref=e6]: Software Engineer
+    - paragraph [ref=e7]: I build practical software across Salesforce, full stack development, automation, integrations, data, and AI-assisted tooling.
+    - generic [ref=e8]:
+      - paragraph [ref=e9]: "Most of my work sits where product thinking meets systems design: customer-facing workflows, internal platforms, geospatial experiences, browser automation, and the tools that make complex operations feel simpler to use."
+      - paragraph [ref=e10]: "The throughline is software that holds up in the real world: clear interfaces, practical architecture, and systems that reduce friction instead of adding to it."
+  - region "What I work on" [ref=e11]:
+    - heading "What I work on" [level=2] [ref=e12]
+    - list [ref=e13]:
+      - listitem [ref=e14]:
+        - generic [ref=e15]: Product-facing web applications and internal platforms
+        - generic [ref=e16]: web · systems · product
+      - listitem [ref=e17]:
+        - generic [ref=e18]: Salesforce customization, enterprise workflows, and integrations
+        - generic [ref=e19]: LWC · Apex · automation
+      - listitem [ref=e20]:
+        - generic [ref=e21]: Agent-style tooling and browser-driven automation
+        - generic [ref=e22]: AI · Playwright · operations
+      - listitem [ref=e23]:
+        - generic [ref=e24]: Data validation, reporting, and operational tooling
+        - generic [ref=e25]: pipelines · dashboards · QA
+  - region "Approach" [ref=e26]:
+    - heading "Approach" [level=2] [ref=e27]
+    - paragraph [ref=e29]: I tend to prefer grounded software over novelty for its own sake. That usually means strong interfaces, dependable workflow design, and implementation choices that make systems easier to maintain once they leave the prototype stage.
+  - generic [ref=e30]:
+    - paragraph [ref=e31]: Open to thoughtful product, platform, and systems work.
+    - navigation "Contact and profiles" [ref=e32]:
+      - link "Email" [ref=e33] [cursor=pointer]:
+        - /url: mailto:shadman@shadman.cc
+      - link "GitHub" [ref=e34] [cursor=pointer]:
+        - /url: https://github.com/shadman-a
+      - link "LinkedIn" [ref=e35] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/ahmedshadman
